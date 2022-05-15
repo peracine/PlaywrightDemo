@@ -2,7 +2,7 @@ using System;
 using System.Threading.Tasks;
 using Microsoft.Playwright.NUnit;
 
-namespace PlaywrightDotNet;
+namespace PlaywrightDemo;
 
 //cf: https://playwright.dev/dotnet/docs/test-runners#base-nunit-classes-for-playwright
 [Parallelizable(ParallelScope.Self)]

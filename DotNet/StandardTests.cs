@@ -2,9 +2,9 @@ using System;
 using System.Threading.Tasks;
 using Microsoft.Playwright;
 
-namespace PlaywrightDotNet;
+namespace PlaywrightDemo;
 
-public class ManualTests
+public class StandardTests
 {
     [Test]
     public async Task Page_title_is_correct()
