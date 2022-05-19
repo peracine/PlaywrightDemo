@@ -42,3 +42,27 @@ test('Emulate MS Edge', async () => {
   await context.close();
   await browser.close();
 });
+
+test('Emulate offline mode', async () => {
+  const browser = await chromium.launch();
+  const context = await browser.newContext();
+  const page = await context.newPage();
+  const testUrl = 'https://en.wikipedia.org/wiki/Harald_V_of_Norway';
+  await page.goto(testUrl);
+  await context.setOffline(true);
+
+  try {
+    await page.goto(testUrl);
+  }
+  catch (exception) {
+    if (exception.message.includes('ERR_INTERNET_DISCONNECTED')) {
+      console.log('The application can not work offline');
+    }
+    else {
+      console.log(exception.message);
+    }
+  }
+
+  await context.close();
+  await browser.close();
+});

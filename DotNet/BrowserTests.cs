@@ -13,7 +13,7 @@ public class BrowserTests
     [SetUp] 
     public void Init()
     { 
-        options = new BrowserTypeLaunchOptions{ Headless = _headless, SlowMo = 10000 };
+        options = new BrowserTypeLaunchOptions{ Headless = _headless, SlowMo = 5000 };
     }
 
     [Test]
