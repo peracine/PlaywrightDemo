@@ -1,5 +1,3 @@
-using System;
-using System.Threading.Tasks;
 using Microsoft.Playwright;
 
 namespace PlaywrightDemo.Tests;
@@ -25,7 +23,7 @@ public class BrowserTests
 
         var response = await page.GotoAsync(_testUrl);
 
-        Assert.AreEqual(200, response.Status);
+        Assert.That(response?.Status, Is.EqualTo(200));
     }
 
     [Test]
@@ -37,7 +35,7 @@ public class BrowserTests
 
         var response = await page.GotoAsync(_testUrl);
 
-        Assert.AreEqual(200, response.Status);
+        Assert.That(response?.Status, Is.EqualTo(200));
     }
 
     [Test]
@@ -49,6 +47,6 @@ public class BrowserTests
 
         var response = await page.GotoAsync(_testUrl);
 
-        Assert.AreEqual(200, response.Status);
+        Assert.That(response?.Status, Is.EqualTo(200));
     }
 }

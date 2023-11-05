@@ -1,5 +1,3 @@
-using System;
-using System.Threading.Tasks;
 using Microsoft.Playwright;
 
 namespace PlaywrightDemo.Tests;
@@ -33,7 +31,7 @@ public class CodegenTests
         await page.Locator("[data-test=\"password\"]").FillAsync("secret_sauce");
         // Click [data-test="login-button"]
         await page.Locator("[data-test=\"login-button\"]").ClickAsync();
-        Assert.AreEqual("https://www.saucedemo.com/inventory.html", page.Url);
+        Assert.That(page.Url, Is.EqualTo("https://www.saucedemo.com/inventory.html"));
     }
 
     [Test]
@@ -62,6 +60,6 @@ public class CodegenTests
 
         var result = await page.IsVisibleAsync("[data-test=\"error\"]");
 
-        Assert.IsTrue(result);
+        Assert.That(result, Is.True);
     }
 }
