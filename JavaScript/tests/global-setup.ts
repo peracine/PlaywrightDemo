@@ -9,7 +9,7 @@ async function globalSetup(){
     await page.fill('[data-test="username"]', 'standard_user');
     await page.fill('[data-test="password"]', 'secret_sauce');
     await page.click('[data-test="login-button"]');
-    await page.context().storageState({ path: 'temp/storageState.json' });
+    await page.context().storageState({ path: './tests/temp/storageState.json' });
     await browser.close();
 }
 

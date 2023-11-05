@@ -5,7 +5,7 @@ test('Emulating iPhone Pro 14', async () => {
   const context = await browser.newContext({ ...devices['iPhone 14 Pro'] });
   const page = await context.newPage();
   await page.goto('https://www.wikipedia.org');
-  await page.screenshot({ path: `temp/iPhone_14_Pro_${new Date().toISOString().split('T')[0]}.png`, fullPage: true });
+  await page.screenshot({ path: `./tests/temp/iPhone_14_Pro_${new Date().toISOString().split('T')[0]}.png`, fullPage: true });
 
   await context.close();
   await browser.close();
